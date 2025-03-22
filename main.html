@@ -7,10 +7,6 @@
     <title>ZW95</title>
     <link rel="icon" href="icons/pixelheart.png">
     <link rel="stylesheet" href="style.css">
-    <style type="text/css">
-            .dosbox-container { width: 320px; height: 200px; }
-               .dosbox-container > .dosbox-overlay { background: url(https://js-dos.com/cdn/DOOM.png); }
-                    </style>
 </head>
 
 <body>
@@ -36,7 +32,8 @@
             <li class="start-menu-items">Find</li>
             <li class="start-menu-items">Help</li>
             <li class="start-menu-items">Run...</li>
-            <li class="start-menu-items">Shut Down...</li>
+            <li class="start-menu-items"><a href="index.html">Sleep</a></li>
+            <li class="start-menu-items" onclick="self.close()"> Shut Down...</li>
         </ul>
     </div>
 
@@ -239,6 +236,7 @@
     <audio id="startup-sound" src="audio/win95startupsound.mp3"></audio>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>

@@ -172,6 +172,10 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock(); // Initialize clock immediately
 
+// function windowclose(){
+// window.close();
+// }
+
 // Make a window draggable
 function makeWindowDraggable(titlebarId, windowId) {
     const titlebar = document.getElementById(titlebarId);

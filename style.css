@@ -13,11 +13,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Bitmgothic', sans-serif;
-    background-image: url(img/cloudhearts.png);
+    /* background-image: url(img/cloudhearts.png);
     background-size: auto;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     /* background-color: #008080;  */
     overflow: hidden;
+    background: url(img/cloudhearts.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
 }
 
 .loading-window {
@@ -404,4 +407,27 @@ padding-top: 5px;
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+  }
+
+
+
+
+  a:link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: white;
+  }
+  
+  a:active {
+    text-decoration: underline;
+    color: white;
   }
