@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Bitmgothic';
+    src: url('fonts/Bitmgothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: black; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #FFBFCA; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #df8ca8; 
+  }
+
+
+
+
+.window-content {
+    background-color: white;
+    width: 30px;
+    height: 40px;
+    display: flex;
+    flex-direction: column; /* Allow for vertical alignment */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    overflow-y: auto; /* Allow scrolling if content exceeds window height */
+    box-sizing: border-box; /* Include padding in element width/height */
+    border: 2px outset #FFBFCA;;
+}
+
+/* #window {
+    position: absolute;
+    width: 8vw;
+    height: 9vh;
+    min-width: 30px; /* Prevent window from being too small */
+    /* min-height: 30px; */
+    /* margin-top: 2px;
+    background-color: #C0C0C0;
+    border: 2px outset white;
+    display: block;
+    resize: both;
+    overflow: hidden;
+    z-index: 100;
+} */ 
+
+.window-titlebar {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between; /* This ensures the title and buttons are spaced apart */
+    align-items: center; /* Align items vertically in the center */
+    position: relative;
+}
+
+
+.window-title {
+    padding: 5px;
+    color: white;
+    flex-grow: 1; /* Allows the title to take up the space between the buttons */
+    text-align: left; /* Ensures the title aligns to the left */
+    font-family: 'Bitmgothic';
+    font-size: 0.8rem;
+}
+
+.close-button {
+    padding-top: 2px;
+    background: none;
+    border-color: white;
+    color: white;
+    background-color: #FFBFCA;
+    cursor: pointer;
+    margin-left: 5px; /* Adds some space between the two buttons */
+    box-shadow: 1px 1px 2px black; /* Adds some depth */
+}
+
+.window-content {
+   width: auto;
+   height: auto;
+}
+
+
+
+/* General styles */
+body {
+    background-color: #000000;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px 20px 50px 20px;
+}
+
+.cv-container {
+    width: 90%; /* Adjust to window size */
+    max-width: 1200px; /* Limit to avoid overly wide layout on large screens */
+    margin: 20px auto;
+    border: 2px solid #FFBFCA;
+    padding: 20px;
+    background-color: #121212;
+    box-shadow: 0px 0px 15px 0px #FFBFCA;
+}
+
+/* Header and layout adjustments */
+.name-selfie-container {
+    display: flex;
+    /* To align the name and selfie side by side */
+    /* align-items: center; */
+}
+
+.name-container {
+    align-content: center;
+    padding-left: 20px;
+    flex: 0.9;
+}
+
+.selfie {
+    flex-shrink: 0; /* Prevent the selfie from shrinking */
+    margin-left: 20px;
+    margin-top: 2px;
+    background-color: #FFBFCA;
+    border: 2px outset #FFBFCA;;
+    display: block;
+    resize: both;
+    overflow: hidden;
+    z-index: 100;
+    align-self: auto;
+}
+
+.selfie img {
+    width: 180px; /* Adjust image size */
+    height: auto;
+    border: 1px solid #FFBFCA; /* Add a border to match the pink aesthetic */
+}
+
+
+/* Adjust font sizes and layout for different screen sizes */
+.cv-header {
+    font-size: 2rem; /* Large font for header */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cv-section {
+    width: 90%; /* Make the content responsive */
+    margin-bottom: 20px;
+}
+
+.cv-text {
+    font-size: 1.1rem; /* Responsive font size */
+    text-align: left;
+}
+
+.cv-photo {
+    max-width: 100%;
+    height: auto; /* Ensure the image is responsive */
+    margin-bottom: 20px;
+}
+
+.education, .experience {
+    /* width: 100%; */
+    margin: 10px 0;
+    padding-top: 10px;
+}
+
+.skills{
+    margin: 10px 0;
+    padding-top: 8px;
+}
+
+/* Responsive typography and layout for smaller screens */
+@media (max-width: 768px) {
+    .cv-header {
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
+    }
+    .cv-text {
+        font-size: 1rem;
+    }
+    .window {
+        width: 95vw;
+        height: 95vh;
+    }
+}
+
+/* Media query for extra small screens (mobile) */
+@media (max-width: 480px) {
+    .cv-header {
+        font-size: 1.2rem;
+    }
+    .cv-text {
+        font-size: 0.9rem;
+    }
+    .window {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .cv-container {
+        width: 95%; /* Wider on smaller screens */
+    }
+    section {
+        flex-basis: 100%; /* Stack sections vertically on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-container {
+        width: 100%; /* Full-width for extra small screens */
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Titlebar styles */
+.titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000080;
+    color: white;
+    padding: 5px;
+    border-bottom: 2px solid #FFBFCA;
+}
+
+.titlebar-text {
+    font-size: 1rem;
+}
+
+.titlebar-buttons button {
+    background-color: #FFBFCA;
+    color: white;
+    border: 1px solid #ffffff;
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Header styles */
+.header {
+    /* border-bottom: 2px solid #FFBFCA; */
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h1 span {
+    border: 2px solid #FFBFCA;
+    padding: 5px;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.contact-info {
+    margin-top: 10px;
+}
+
+.contact-info a {
+    color: #FFBFCA;
+    text-decoration: none;
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+section {
+    flex-basis: 45%;
+    margin: 15px;
+    min-width: 250px;
+}
+
+section h3 {
+    border-bottom: 2px solid #FFBFCA;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .name-selfie-container {
+        flex-direction: column; /* Stack the name and selfie vertically on smaller screens */
+        align-items: center;
+    }
+
+    .selfie {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .cv-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .selfie img {
+        width: 100px; /* Adjust image size for smaller screens */
+    }
+}
+.skills ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.softskills{
+    display: flex;
+    flex-direction: column;
+}
+
+.softskills li{
+/* margin-right: 30px; */
+padding-top: 30px;
+padding-left: 40px;
+list-style-type: square;
+}
+
+.rating {
+    color: #FFBFCA;
+}
+
+.education ul li,
+.experience ul li {
+    padding: 5px 0;
+    list-style-type: square;
+}
+
+.accomplishments{
+    /* position:absolute; */
+    margin-top: -240px;
+    padding-bottom: 50px;
+}
+
+.accomplishments ul li {
+    padding: 5px 0;
+}
+
+/* For a retro aesthetic, use this to give the pink-bordered boxes */
+.cv-container h1, .cv-container h3, .cv-container p, .cv-container ul li {
+    border-left: 2px solid #FFBFCA;
+    padding-left: 10px;
+}

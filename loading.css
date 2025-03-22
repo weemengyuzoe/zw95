@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: black; /* Set background color */
+    font-family: 'Bitmgothic', sans-serif; /* Use your font */
+    color: white;
+}
+
+.window-titlebar {
+    background-color: black;
+    color: white;
+    padding: 5px 5px 5px 10px;
+    display: flex;
+    justify-content: space-between; /* This ensures the title and buttons are spaced apart */
+    align-items: center; /* Align items vertically in the center */
+    position: relative;
+    border: 2px outset #FFBFCA; /* Window border */
+}
+
+
+.window-title {
+    padding: 5px;
+    color: white;
+    flex-grow: 1; /* Allows the title to take up the space between the buttons */
+    text-align: left; /* Ensures the title aligns to the left */
+    font-family: 'Bitmgothic';
+    font-size: 0.8rem;
+}
+
+
+.loading-window {
+    text-align: center;
+    background-color: black; /* Window color */
+    border: 2px outset #FFBFCA; /* Window border */
+    padding: 0px;
+    border-radius: 5px; /* Rounded corners */
+    width: 500px;
+    height: 300px;
+}
+
+.loading-content{
+    padding: 30px;
+}
+
+.loading-icon {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    padding-bottom: 15px;
+}
+
+.loading-text1 {
+    font-size: 2.5rem;
+    color: white;
+    margin:0;
+    padding-bottom: 10px;
+}
+
+.loading-text {
+    font-size: 1rem;
+    color: white;
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+/* .textZW95{
+    font-size: 3rem;
+} */
+
+.enter-button {
+    background-color: black; /* Button color */
+    color: white; /* Text color */
+    border: 2px outset #FFBFCA;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Bitmgothic', sans-serif;
+}
+
+.enter-button:hover {
+    background-color: grey; /* Button hover color */
+}
+
