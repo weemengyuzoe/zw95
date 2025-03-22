@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZW95</title>
+    <link rel="icon" href="icons/pixelheart.png">
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+            .dosbox-container { width: 320px; height: 200px; }
+               .dosbox-container > .dosbox-overlay { background: url(https://js-dos.com/cdn/DOOM.png); }
+                    </style>
+</head>
+
+<body>
+    <div class="taskbar">
+        <div class="start-button">
+            <img src="icons/windows_slanted-1.png" style="padding-right: 4px;">
+            <span class="start-word">Start</span>
+        </div>
+        <div class="taskbar-button" id="taskbar-button">
+
+        </div>
+        <div class="taskbar-clock">
+            <span id="clock"></span>
+        </div>
+    </div>
+
+    <!-- Start Menu -->
+    <div class="start-menu" id="start-menu">
+        <ul>
+            <li class="start-menu-items">Programs</li>
+            <li class="start-menu-items">Documents</li>
+            <li class="start-menu-items">Settings</li>
+            <li class="start-menu-items">Find</li>
+            <li class="start-menu-items">Help</li>
+            <li class="start-menu-items">Run...</li>
+            <li class="start-menu-items">Shut Down...</li>
+        </ul>
+    </div>
+
+    <!-- Desktop Icons -->
+    <div class="desktop">
+        <div class="icon" onclick="alert('Work in Progress!')">
+            <img src="icons/computer-5.png" alt="My Computer" class=".window-titlebar-icon">
+            <p class="desktoptext">Zoe's Computer</p>
+        </div>
+        <div class="icon" onclick="alert('This Bin empty YEET')">
+            <img src="icons/recycle_bin_empty_cool-0.png" alt="Recycle Bin">
+            <p class="desktoptext">Recycle Bin</p>
+        </div>
+        <div class="icon" onclick="openWindow('window1', 'icons/certificate_2-0.png')">
+            <img src="icons/certificate_2-0.png" alt="My CV" class="window-titlebar-icon">
+            <p class="desktoptext">Zoe's CV</p>
+        </div>
+        <div class="icon" onclick="openWindow('window0', 'icons/doomicon.ico')">
+            <img src="icons/doomicon.ico" alt="doom" class="window-titlebar-icon">
+            <p class="desktoptext">DOOM</p>
+        </div>
+       
+    </div>
+
+    <div class="myworks">
+        <div class="icon" onclick="openWindow('window2', 'icons/camera-0.png')">
+            <img src="icons/camera-0.png" alt="Photography Works" class="window-titlebar-icon">
+            <p class="desktoptext">Photography Works</p>
+        </div>
+        <div class="icon" onclick="openWindow('window3', 'icons/movie_maker-5.png')">
+            <img src="icons/movie_maker-5.png" alt="Branding & Campaign" class="window-titlebar-icon">
+            <p class="desktoptext">Branding & Campaign</p>
+        </div>
+        <div class="icon" onclick="openWindow('window4', 'icons/users-2.png')">
+            <img src="icons/users-2.png" alt="UI/UX" class="window-titlebar-icon">
+            <p class="desktoptext">UI/UX</p>
+        </div>
+        <div class="icon" onclick="openWindow('window5', 'kodak_imaging-0.png')">
+            <img src="icons/kodak_imaging-0.png" alt="Print & Illustrations" class="window-titlebar-icon">
+            <p class="desktoptext">Print & Illustrations</p>
+        </div>
+        <div class="icon" onclick="openWindow('window6', 'icons/defragment-0.png')">
+            <img src="icons/defragment-0.png" alt="Other Projects" class="window-titlebar-icon">
+            <p class="desktoptext">Other Projects</p>
+        </div>
+    </div>
+
+    <div class="window" id="window0">
+        <div class="window-titlebar" id="titlebar0">
+            <span class="window-title"> DOOM</span>
+            <button class="minimize-button" onclick="minimizeWindow('window0')">_</button>
+            <button id="expand-button-window0" class="expand-button" onclick="toggleExpand('window0')">□</button>
+            <button id="resize-button-window0" class="resize-button" onclick="toggleExpand('window0')">□</button>
+            <button class="close-button" onclick="closeWindow('window0')">X</button>
+        </div>
+        <div class="window-menu-bar">
+            <div class="menu-item" tabindex="0"><u>F</u>ile</div>
+            <div class="menu-item" tabindex="0"><u>E</u>dit</div>
+            <div class="menu-item" tabindex="0"><u>V</u>iew</div>
+            <div class="menu-item" tabindex="0"><u>H</u>elp</div>
+        </div>
+        <div class="window-content">
+            <iframe src="https://doomonline1.vercel.app/dos.html" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+    
+
+
+    <div class="window" id="window1">
+        <div class="window-titlebar" id="titlebar1">
+            <span class="window-title"> Zoe's CV</span>
+            <button class="minimize-button" onclick="minimizeWindow('window1')">_</button>
+            <button id="expand-button-window1" class="expand-button" onclick="toggleExpand('window1')">□</button>
+            <button id="resize-button-window1" class="resize-button" onclick="toggleExpand('window1')">□</button>
+            <button class="close-button" onclick="closeWindow('window1')">X</button>
+        </div>
+        <div class="window-menu-bar">
+            <div class="menu-item" tabindex="0"><u>F</u>ile</div>
+            <div class="menu-item" tabindex="0"><u>E</u>dit</div>
+            <div class="menu-item" tabindex="0"><u>V</u>iew</div>
+            <div class="menu-item" tabindex="0"><u>H</u>elp</div>
+        </div>
+        <div class="window-content">
+            <iframe src="cvcontent.html" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="window" id="window2" data-icon="icons/camera-0.png">
+        <div class="window-titlebar" id="titlebar2">
+            <span class="window-title"> Photography Works</span>
+            <button class="minimize-button" onclick="minimizeWindow('window2')">_</button>
+            <button id="expand-button-window2" class="expand-button" onclick="toggleExpand('window2')">□</button>
+            <button id="resize-button-window2" class="resize-button" onclick="toggleExpand('window2')">□</button>
+            <button class="close-button" onclick="closeWindow('window2')">X</button>
+        </div>
+        <div class="window-menu-bar">
+            <div class="menu-item" tabindex="0"><u>F</u>ile</div>
+            <div class="menu-item" tabindex="0"><u>E</u>dit</div>
+            <div class="menu-item" tabindex="0"><u>V</u>iew</div>
+            <div class="menu-item" tabindex="0"><u>H</u>elp</div>
+        </div>
+        <div class="window-content-behance">
+                <iframe src="https://www.behance.net/embed/project/221903627?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.behance.net/embed/project/221881629?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.behance.net/embed/project/221821697?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.behance.net/embed/project/221777723?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.behance.net/embed/project/221688765?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.behance.net/embed/project/93494497?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+    <div class="window" id="window3" data-icon="icons/movie_maker-5.png">
+        <div class="window-titlebar" id="titlebar3">
+            <span class="window-title"> Branding & Campaign</span>
+            <button class="minimize-button" onclick="minimizeWindow('window3')">_</button>
+            <button id="expand-button-window3" class="expand-button" onclick="toggleExpand('window3')">□</button>
+            <button id="resize-button-window3" class="resize-button" onclick="toggleExpand('window3')">□</button>
+            <button class="close-button" onclick="closeWindow('window3')">X</button>
+        </div>
+        <div class="window-menu-bar">
+            <div class="menu-item" tabindex="0"><u>F</u>ile</div>
+            <div class="menu-item" tabindex="0"><u>E</u>dit</div>
+            <div class="menu-item" tabindex="0"><u>V</u>iew</div>
+            <div class="menu-item" tabindex="0"><u>H</u>elp</div>
+        </div>
+        <div class="window-content-behance">
+            <iframe src="https://www.behance.net/embed/project/221901963?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/151388191?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/151385249?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/151387449?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+    <div class="window" id="window4" data-icon="icons/users-2.png">
+        <div class="window-titlebar" id="titlebar4">
+            <span class="window-title">UI/UX</span>
+            <button class="minimize-button" onclick="minimizeWindow('window4')">_</button>
+            <button id="expand-button-window4" class="expand-button" onclick="toggleExpand('window4')">□</button>
+            <button id="resize-button-window4" class="resize-button" onclick="toggleExpand('window4')">□</button>
+            <button class="close-button" onclick="closeWindow('window4')">X</button>
+        </div>
+        <div class="window-menu-bar">
+            <div class="menu-item" tabindex="0"><u>F</u>ile</div>
+            <div class="menu-item" tabindex="0"><u>E</u>dit</div>
+            <div class="menu-item" tabindex="0"><u>V</u>iew</div>
+            <div class="menu-item" tabindex="0"><u>H</u>elp</div>
+        </div>
+        <div class="window-content-behance">
+            <iframe src="https://www.behance.net/embed/project/93696855?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/93694043?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/93529633?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/93519673?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+    <div class="window" id="window5" data-icon="icons/kodak_imaging-0.png">
+        <div class="window-titlebar" id="titlebar5">
+            <span class="window-title">Print & Illustrations</span>
+            <button class="minimize-button" onclick="minimizeWindow('window5')">_</button>
+            <button id="expand-button-window5" class="expand-button" onclick="toggleExpand('window5')">□</button>
+            <button id="resize-button-window5" class="resize-button" onclick="toggleExpand('window5')">□</button>
+            <button class="close-button" onclick="closeWindow('window5')">X</button>
+        </div>
+        <div class="window-menu-bar">
+            <div class="menu-item" tabindex="0"><u>F</u>ile</div>
+            <div class="menu-item" tabindex="0"><u>E</u>dit</div>
+            <div class="menu-item" tabindex="0"><u>V</u>iew</div>
+            <div class="menu-item" tabindex="0"><u>H</u>elp</div>
+        </div>
+        <div class="window-content-behance">
+            <iframe src="https://www.behance.net/embed/project/221816683?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/93493757?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/221819707?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/151884541?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+    <div class="window" id="window6" data-icon="icons/defragment-0.png">
+        <div class="window-titlebar" id="titlebar6">
+            <span class="window-title">Other Projects</span>
+            <button class="minimize-button" onclick="minimizeWindow('window6')">_</button>
+            <button id="expand-button-window6" class="expand-button" onclick="toggleExpand('window6')">□</button>
+            <button id="resize-button-window6" class="resize-button" onclick="toggleExpand('window6')">□</button>
+            <button class="close-button" onclick="closeWindow('window6')">X</button>
+        </div>
+        <div class="window-menu-bar">
+            <div class="menu-item" tabindex="0"><u>F</u>ile</div>
+            <div class="menu-item" tabindex="0"><u>E</u>dit</div>
+            <div class="menu-item" tabindex="0"><u>V</u>iew</div>
+            <div class="menu-item" tabindex="0"><u>H</u>elp</div>
+        </div>
+        <div class="window-content-behance">
+            <iframe src="https://www.behance.net/embed/project/221988521?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/221906069?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.behance.net/embed/project/93488717?ilo0=1" height="316" width="auto" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+    <audio id="click-sound" src="audio/mouseclickeffect.mp3"></audio>
+    <audio id="startup-sound" src="audio/win95startupsound.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
