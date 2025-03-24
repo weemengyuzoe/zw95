@@ -113,17 +113,23 @@ body {
 /* Header and layout adjustments */
 .name-selfie-container {
     display: flex;
-    /* To align the name and selfie side by side */
-    /* align-items: center; */
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap; /* prevent stacking unless media query kicks in */
+    gap: 1rem;
 }
 
 .name-container {
     align-content: center;
     padding-left: 20px;
-    flex: 0.9;
+    flex: 1 1 0;
+    min-width: 50%;
+    flex-wrap: wrap;
 }
 
 .selfie {
+    flex: 0 0 auto;
+    max-width: 200px;
     flex-shrink: 0; /* Prevent the selfie from shrinking */
     margin-left: 20px;
     margin-top: 2px;
@@ -178,6 +184,15 @@ body {
     padding-top: 8px;
 }
 
+.name-container h1,
+.name-container h2,
+.name-container p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+
 /* Responsive typography and layout for smaller screens */
 @media (max-width: 768px) {
     .cv-header {
@@ -190,10 +205,38 @@ body {
         width: 95vw;
         height: 95vh;
     }
+    .cv-container {
+        width: 95%; /* Wider on smaller screens */
+    }
+    section {
+        flex-basis: 100%; /* Stack sections vertically on small screens */
+    }
+
+    .name-selfie-container {
+        flex-direction: column; /* Stack the name and selfie vertically on smaller screens */
+        align-items: center;
+    }
+
+    .selfie {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
 }
 
-/* Media query for extra small screens (mobile) */
+
+
 @media (max-width: 480px) {
+
+    .name-container{
+        padding: 0;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
     .cv-header {
         font-size: 1.2rem;
     }
@@ -204,28 +247,14 @@ body {
         width: 100vw;
         height: 100vh;
     }
-}
-
-@media (max-width: 768px) {
     .cv-container {
-        width: 95%; /* Wider on smaller screens */
+        width: 100%;
     }
-    section {
-        flex-basis: 100%; /* Stack sections vertically on small screens */
+    .selfie img {
+        width: 200px; /* Adjust image size for smaller screens */
     }
 }
 
-@media (max-width: 480px) {
-    .cv-container {
-        width: 100%; /* Full-width for extra small screens */
-    }
-    h1 {
-        font-size: 1.5rem;
-    }
-    h2 {
-        font-size: 1.2rem;
-    }
-}
 
 
 /* Titlebar styles */
@@ -303,39 +332,7 @@ section h3 {
     padding-bottom: 5px;
 }
 
-@media (max-width: 768px) {
-    .name-selfie-container {
-        flex-direction: column; /* Stack the name and selfie vertically on smaller screens */
-        align-items: center;
-    }
 
-    .selfie {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    .cv-container {
-        width: 95%;
-    }
-}
-
-@media (max-width: 480px) {
-    .cv-container {
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-    }
-
-    .selfie img {
-        width: 100px; /* Adjust image size for smaller screens */
-    }
-}
 .skills ul li {
     display: flex;
     justify-content: space-between;
