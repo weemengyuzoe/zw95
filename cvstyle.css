@@ -9,25 +9,29 @@
     font-style: normal;
 }
 
-/* width */
 ::-webkit-scrollbar {
-    width: 5px;
-    
+    width: 15px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
     background: black; 
+    border: 3px;
+    border-style: solid;
+    border-color: #FFBFCA;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #FFBFCA; 
+    border: 3px;
+    border-style: solid;
+    border-color: white;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #df8ca8; 
+    background: #555; 
   }
 
 
@@ -46,20 +50,7 @@
     border: 2px outset #FFBFCA;;
 }
 
-/* #window {
-    position: absolute;
-    width: 8vw;
-    height: 9vh;
-    min-width: 30px; /* Prevent window from being too small */
-    /* min-height: 30px; */
-    /* margin-top: 2px;
-    background-color: #C0C0C0;
-    border: 2px outset white;
-    display: block;
-    resize: both;
-    overflow: hidden;
-    z-index: 100;
-} */ 
+
 
 .window-titlebar {
     background-color: black;
@@ -369,8 +360,12 @@ list-style-type: square;
 
 .education ul li,
 .experience ul li {
-    padding: 5px 0;
+    /* padding: 5px 0; */
     list-style-type: square;
+}
+
+.experience{
+    padding-bottom: 50px;
 }
 
 .accomplishments{

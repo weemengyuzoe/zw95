@@ -77,17 +77,40 @@ function setupWindowControls(windowId) {
     expandButton.addEventListener('click', () => toggleExpand(windowId));
     resizeButton.addEventListener('click', () => toggleExpand(windowId));
 }
+
+
+
 // Function to open a window
 function openWindow(windowId) {
     const windowElement = document.getElementById(windowId);
     const taskbarIcons = document.getElementById('taskbar-button');
 
+    const isMobile = window.innerWidth <= 430; // Mobile detection
+
+    const expandButton = windowElement.querySelector('.expand-button');
+if (expandButton) {
+    if (isMobile) {
+        expandButton.style.display = 'none';
+    } else {
+        expandButton.style.display = 'inline-block'; // Or whatever display it normally uses
+    }
+}
+
+if (isMobile) {
+    windowElement.style.display = 'block';
+    windowElement.style.width = '95%';
+    windowElement.style.height = '90%';
+    windowElement.style.left = '0%';
+    windowElement.style.top = '5%';
+
+} else {
     // Display the window
     windowElement.style.display = 'block';
     windowElement.style.width = '800px';
     windowElement.style.height = '92%';
     windowElement.style.zIndex = 100; 
     windowElement.style.yIndex = 90;
+}
 
     // Center the window
     const windowWidth = windowElement.offsetWidth;
@@ -131,6 +154,9 @@ function openWindow(windowId) {
     }
 }
 
+
+
+
 // Function to minimize a window
 function minimizeWindow(windowId) {
     const windowElement = document.getElementById(windowId);
@@ -154,6 +180,7 @@ function toggleWindow(windowId) {
     const windowElement = document.getElementById(windowId);
     if (windowElement.style.display === 'none') {
         windowElement.style.display = 'block'; // Show the window
+        windowElement.style.overflow = 'none';
         windowElement.classList.remove('minimized');
     } else {
         minimizeWindow(windowId); // Minimize the window

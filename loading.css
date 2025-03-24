@@ -91,3 +91,15 @@ body {
     background-color: grey; /* Button hover color */
 }
 
+
+
+@media screen and (max-width: 430px) {
+    body{
+        margin: 30px;
+        overflow: hidden;
+    }
+    
+    .loading-window{
+        height: 340px;
+    }
+  }
