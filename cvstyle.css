@@ -131,7 +131,7 @@ body {
     flex: 0 0 auto;
     max-width: 200px;
     flex-shrink: 0; /* Prevent the selfie from shrinking */
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 2px;
     background-color: #FFBFCA;
     border: 2px outset #FFBFCA;;
@@ -173,14 +173,14 @@ body {
     margin-bottom: 20px;
 }
 
-.education, .experience {
+.education, .experience, .academicprojects{
     /* width: 100%; */
-    margin: 10px 0;
+    margin: 15px;
     padding-top: 10px;
 }
 
 .skills{
-    margin: 10px 0;
+    margin: 15px;
     padding-top: 8px;
 }
 
@@ -365,9 +365,9 @@ list-style-type: square;
     padding-bottom: 50px;
 }
 
-.accomplishments{
-    /* position:absolute; */
-    margin-top: -240px;
+.academicprojects{
+    /* position:absolute; *
+    /* margin-top: -240px; */
     padding-bottom: 50px;
 }
 
