@@ -1,8 +1,8 @@
 
 
 @font-face {
-    font-family: 'Bitmgothic';
-    src: url('fonts/Bitmgothic.ttf') format('truetype');
+    font-family: 'Pixelcastle';
+    src: url('fonts/Pixelcastle.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -14,7 +14,7 @@ body {
     align-items: center;
     height: 100vh; /* Full height of the viewport */
     background-color: black; /* Set background color */
-    font-family: 'Bitmgothic', sans-serif; /* Use your font */
+    font-family: 'Pixelcastle', sans-serif; /* Use your font */
     color: white;
 }
 
@@ -35,7 +35,7 @@ body {
     color: white;
     flex-grow: 1; /* Allows the title to take up the space between the buttons */
     text-align: left; /* Ensures the title aligns to the left */
-    font-family: 'Bitmgothic';
+    font-family: 'Pixelcastle';
     font-size: 0.8rem;
 }
 
@@ -84,7 +84,7 @@ body {
     border: 2px outset #FFBFCA;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: 'Bitmgothic', sans-serif;
+    font-family: 'Pixelcastle', sans-serif;
 }
 
 .enter-button:hover {
